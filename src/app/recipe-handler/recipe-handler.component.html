@@ -1,0 +1,43 @@
+<div>
+    <h1>Recipe Name</h1>
+    <h2>Optional Fields</h2>
+
+    <label for="name">Rating (1-10):</label>
+    <input type="number" id="rating" name="rating"
+    min="1" max="10">
+    <br>
+
+    <label for="name">Difficulty (1-10):</label>
+    <input type="number" id="difficulty" name="difficulty"
+    min="1" max="10"> 
+    <br>
+
+    <label for="name">Region:</label>
+    <input type="text" id="region" name="region">
+    <br>
+
+    <label for="name">Season:</label>
+    <input type="text" id="season" name="season">
+
+    <h2>Ingredients</h2>
+    <table>
+            <tr>
+                <th>Ingredient Name</th>
+                <th>Amount</th>
+                <th>Measurement Type</th>
+            </tr>
+            <tr>
+                <td> 
+                    <input type="text" id="ingredientName" name="ingredientName">
+                </td>
+                <td>
+                    <input type="text" id="ingredientAmount" name="ingredientAmount">
+                </td>
+                <td>
+                    <input type="text" id="measurementType" name="measurementType">
+                </td>
+            </tr> 
+    </table>
+    <button>Add another ingredient</button>
+    <button>Submit</button>
+</div>
