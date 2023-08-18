@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../models/Ingredient';
+import { Recipe } from '../models/Recipe';
+import { RecipeService } from '../services/recipe.service';
 
 
 @Component({
@@ -9,6 +11,11 @@ import { Ingredient } from '../models/Ingredient';
 })
 export class RecipeHandlerComponent {
 
+  constructor(
+    private recipeService: RecipeService
+  ){}
+
+  recipe: Recipe = new Recipe();
   ingredientList: Ingredient[] = [{
     ingredientName: '', 
     ingredientAmount: '', 
@@ -28,7 +35,8 @@ export class RecipeHandlerComponent {
     }
   }
 
-  submitRecipe(){
-
+  submit(){
+    this.recipe.ingredients = this.ingredientList;
+    this.recipeService.submitRecipe(this.recipe);
   }
 }

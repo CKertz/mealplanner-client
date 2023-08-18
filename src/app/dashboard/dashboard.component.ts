@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { GenerateMenuService } from '../generate-menu.service';
+import { GenerateMenuService } from '../services/generate-menu.service';
 
 @Component({
   selector: 'app-dashboard',
