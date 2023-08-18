@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { GenerateMenuService } from '../generate-menu.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,24 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  
+  constructor(private router: Router, private generateMenu: GenerateMenuService){ }
 
-  constructor(private router: Router){ }
-
-  generateMenuItems()
-  {
-
+  generateMenuItems(){
+    this.generateMenu.generateRecipes();
   }
 
-  recipeHandlerButtonClicked($myParam: string = ''): void 
-  {
+  recipeHandlerButtonClicked($routeParam: string = ''): void {
     const navigationDetails: string[] = ['/recipes'];
-    if($myParam.length) {
-      navigationDetails.push($myParam);
+    if($routeParam.length) {
+      navigationDetails.push($routeParam);
     }
     this.router.navigate(navigationDetails);
   }
-  pantryInventoryButtonClicked()
-  {
+
+  pantryInventoryButtonClicked() {
 
   }
 
